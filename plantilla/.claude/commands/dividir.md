@@ -27,7 +27,7 @@ Agent({
 
 ### Reglas
 
-- **Siempre `model: "haiku"`** — el más barato ($0.10/$0.50 por MTok).
+- **Siempre `model: "haiku"`** — el más barato (USD 0.10/USD 0.50 por MTok).
 - **Nunca `subagent_type: "fork"`** — un fork hereda todo el contexto y es caro. Usa agentes frescos.
 - **Prompt autocontenido**: el constructor no ve esta conversación. Dale todo lo que necesita:
   objetivo, archivos a tocar, archivos a leer, pasos, restricciones, verificación.

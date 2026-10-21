@@ -66,7 +66,7 @@ Agent({
 ```
 
 Reglas de cada constructor:
-- **model siempre `haiku`** (el más barato: $0.10/$0.50 por millón de tokens)
+- **model siempre `haiku`** (el más barato: USD 0.10/USD 0.50 por millón de tokens)
 - El **prompt debe ser autocontenido**: objetivo, archivos permitidos, pasos concretos, qué no hacer, cómo verificar. El constructor no ve esta conversación.
 - Dos constructores de la misma ola **nunca tocan el mismo archivo**. Archivos compartidos (índices, config, rutas) van a una tarea de integración al final.
 - Si una tarea depende de otra, va en una ola posterior.
@@ -103,9 +103,9 @@ Al terminar, calcula una estimación basada en el número de agentes lanzados:
 
 | Agente | Modelo | Entrada $/1M | Salida $/1M | Costo típico por llamada |
 |---|---|---|---|---|
-| Jefe | Opus 5.5 | $4.00 | $20.00 | ~$0.10-0.50 |
-| Constructor | Haiku 5.5 | $0.10 | $0.50 | ~$0.001-0.01 |
-| Supervisor | Sonnet 5.5 | $2.00 | $10.00 | ~$0.02-0.10 |
+| Jefe | Opus 5.5 | USD 4.00 | USD 20.00 | ~USD 0.10-0.50 |
+| Constructor | Haiku 5.5 | USD 0.10 | USD 0.50 | ~USD 0.001-0.01 |
+| Supervisor | Sonnet 5.5 | USD 2.00 | USD 10.00 | ~USD 0.02-0.10 |
 | Orquestador | (tu modelo) | — | — | (ya incluido en tu plan) |
 
 Presenta una tabla resumen:
@@ -113,10 +113,10 @@ Presenta una tabla resumen:
 ## Costo estimado del equipo
 | Rol | Modelo | Agentes lanzados | Costo estimado |
 |---|---|---|---|
-| Jefe | opus | 1 | ~$0.XX |
-| Constructores | haiku | N | ~$0.XX |
-| Supervisor | sonnet | M | ~$0.XX |
-| **Total estimado** | | | **~$0.XX** |
+| Jefe | opus | 1 | ~USD 0.XX |
+| Constructores | haiku | N | ~USD 0.XX |
+| Supervisor | sonnet | M | ~USD 0.XX |
+| **Total estimado** | | | **~USD 0.XX** |
 ```
 
 Nota: es una estimación basada en el uso típico por agente. El costo real depende del largo de los prompts y las respuestas.

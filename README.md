@@ -31,6 +31,10 @@ re-planifica solo esa tarea → revisión final del supervisor.
 Un equipo típico (1 jefe + 4 constructores + 1 supervisor) cuesta ~**$0.52**.
 El mismo trabajo con un solo agente Opus: ~$2.00+.
 
+> **Ojo al editar los comandos (`plantilla/.claude/commands/*.md`):** escribir precios como
+> `USD 0.10`, nunca `$0.10`. Claude Code reemplaza `$0`, `$1`… por las palabras del pedido
+> (`/equipo que puedo hacer` → `$0.10` se vuelve `que.10`). Este README no se ve afectado.
+
 ### Comparación con Antigravity
 
 | Ejecutor | Antigravity (Flash) | Claude Code (Haiku) |
