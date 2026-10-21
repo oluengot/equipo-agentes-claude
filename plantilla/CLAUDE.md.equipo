@@ -1,0 +1,32 @@
+# Reglas del equipo de agentes (agregar a CLAUDE.md del proyecto)
+
+## Economía de tokens (agentes)
+
+- Al lanzar subagentes con la herramienta Agent, usa siempre `model: "haiku"` para
+  constructores/ejecutores (el más barato: $0.10/$0.50 por MTok).
+- Nunca uses `subagent_type: "fork"` para ejecutar trabajo: un fork hereda todo el
+  contexto y es caro. Usa agentes frescos con prompts autocontenidos.
+- `model: "opus"` queda reservado para planificación (el jefe) o si el usuario lo pide.
+- `model: "sonnet"` para validación (el supervisor).
+- `model: "fable"` solo si el usuario lo pide explícitamente (es 25× más caro que Opus en entrada).
+
+## Economía de contexto
+
+- Lee lo justo: grep/búsqueda antes de abrir un archivo completo.
+- Archivos de más de 300 líneas: lee solo el rango necesario.
+- Salidas de comandos: limita con head, --max-count, LIMIT o equivalente.
+- No releas archivos que ya están en contexto.
+- Prompts a subagentes: pasa rutas de archivos, no el contenido pegado.
+- Respuestas breves y directas.
+
+## Delegación en constructores
+
+Cuando dividas trabajo en subagentes (porque el usuario lo pide o porque tú lo decides):
+
+1. Cada constructor se lanza con `Agent({ model: "haiku", ... })`.
+2. Decide la especialidad de cada uno según su parte de la tarea y ponla en `description`.
+3. Tantos como partes independientes tenga el trabajo; respeta el tope del usuario.
+4. Sin cruces: dos constructores nunca tocan el mismo archivo en la misma tanda.
+5. Prompt autocontenido: objetivo, archivos, pasos, qué no hacer, verificación.
+6. Revisión: si el trabajo es delicado, lanza un supervisor (`model: "sonnet"`).
+7. Para desarrollos grandes con plan formal, usa `/equipo`.
