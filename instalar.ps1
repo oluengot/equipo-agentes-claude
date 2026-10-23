@@ -26,9 +26,11 @@ New-Item -ItemType Directory -Force $destCommands | Out-Null
 Copy-Item (Join-Path $origen '.claude\commands\equipo.md') $destCommands -Force
 Copy-Item (Join-Path $origen '.claude\commands\dividir.md') $destCommands -Force
 Copy-Item (Join-Path $origen '.claude\commands\costos.md') $destCommands -Force
+Copy-Item (Join-Path $origen '.claude\commands\equipo-max.md') $destCommands -Force
 
 Write-Host "Comandos instalados en: $destCommands"
 Write-Host "  /equipo  - Equipo completo (jefe + constructores + supervisor)"
+Write-Host "  /equipo-max - Maxima calidad, todo Opus, sin importar el costo"
 Write-Host "  /dividir - Dividir tarea en constructores paralelos"
 Write-Host "  /costos  - Tabla de precios de los modelos"
 

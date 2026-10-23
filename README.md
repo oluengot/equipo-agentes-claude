@@ -61,6 +61,7 @@ El modelo sigue siendo Haiku en todos los casos — el enfoque guía el trabajo,
 | Comando | Qué hace |
 |---|---|
 | `/equipo <pedido>` | Equipo completo: jefe planifica, constructores ejecutan, supervisor valida |
+| `/equipo-max <pedido>` | Máxima calidad sin importar costo: todo Opus, pruebas obligatorias, revisor independiente y revisión cruzada |
 | `/dividir <pedido>` | Solo constructores en paralelo (sin jefe ni supervisor formal) |
 | `/costos` | Muestra la tabla de precios de los modelos |
 
@@ -89,6 +90,7 @@ Los agentes se pasan **rutas** de archivos, no contenidos — eso mantiene bajo 
 | Archivo | Qué es |
 |---|---|
 | `plantilla/.claude/commands/equipo.md` | Comando `/equipo`: equipo completo con protocolo de orquestación |
+| `plantilla/.claude/commands/equipo-max.md` | Comando `/equipo-max`: variante de máxima calidad (todo Opus) |
 | `plantilla/.claude/commands/dividir.md` | Comando `/dividir`: constructores en paralelo sin plan formal |
 | `plantilla/.claude/commands/costos.md` | Comando `/costos`: tabla de precios para referencia |
 | `plantilla/CLAUDE.md.equipo` | Reglas de economía para agregar al CLAUDE.md del proyecto |
